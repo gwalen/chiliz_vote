@@ -7,6 +7,13 @@ Run with:
 npx ts-node script/fetchTransactionHistory.ts
 ```
 
+When running be aware the input param is 1 year and it will take very long time.
+To verify that output is correct use smaller block time frame. For that in file `fetchTransactionHistory()` uncomment this lines:
+```  
+  /** Test implementation with smaller time frame (20_000) blocks ago **/
+  // const currentBlockNumber = await provider.getBlockNumber();
+  // const transfers =  await getTransferEventsByChunks(currentBlockNumber - 20_000, blockPartitionSize, addresses);]
+```
 
 ## Naive solution analysis:
 
